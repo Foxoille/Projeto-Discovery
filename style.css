@@ -13,6 +13,7 @@
   --bg-url: url(./assets/bg-mobile.jpg); /*imagem de fundo */
   --stroke-color: rgba(255, 255, 255, 0.5); /*cor da borda */
   --surface-color: rgba(255, 255, 255, 0.1); /*fundo dos botões */
+  --hightlight-color: rgba(255, 255, 255, 0.2);
   --surface-color-hover: rgba(
     255,
     255,
@@ -29,6 +30,7 @@
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --hightlight-color: rgba(0, 0, 0, 0.2);
   --switch-bg-url: url(./assets/sun.svg);
 }
 
@@ -98,6 +100,10 @@ body * {
 .light #switch button {
   animation: slide-in 0.2s forwards; /*-- Aplicando animação --*/
   /*-- forwards permite que o botão não volte ao estado antes da animação. --*/
+}
+
+#switch button:hover {
+  outline: 8px solid var(--hightlight-color);
 }
 
 /*-- cria o tracker --*/
