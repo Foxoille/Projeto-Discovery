@@ -45,7 +45,8 @@ body * {
 
 /*-- criando a caixa primaria --*/
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px; /* margem top de 56px, margem lateral auto e embaixo 0 */
   padding: 0 24px; /* padding 0 na vertical e 24px na horizontal */
 }
