@@ -1,0 +1,183 @@
+/*-- Parametros gerais --*/
+
+* {
+  /*resetando as regras defaut do CSS do navegador*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*calculo da caixa com mais coerencia*/
+}
+
+/*-- Guarda os valores do dark mode --*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg); /*imagem de fundo */
+  --stroke-color: rgba(255, 255, 255, 0.5); /*cor da borda */
+  --surface-color: rgba(255, 255, 255, 0.1); /*fundo dos botões */
+  --surface-color-hover: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /*fundo quando selecionado com o mouse */
+  --switch-bg-url: url(./assets/moon-stars.svg); /* icone do botão switch */
+}
+
+/*-- guarda os valores do light mode --*/
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+/*-- Define a imagem de fundo de acordo com o modo. Deixando ela sem repetição e centrada cobrindo a pagina --*/
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+/*-- Define a fonte usada no body inteiro e sua cor. */
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+}
+
+/*-- criando a caixa primaria --*/
+#container {
+  width: 360px;
+  margin: 56px auto 0px; /* margem top de 56px, margem lateral auto e embaixo 0 */
+  padding: 0 24px; /* padding 0 na vertical e 24px na horizontal */
+}
+
+/*-- Caixa Perfil --*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500; /* definindo a grossura da fonte */
+  line-height: 24px; /*altura de linha */
+  margin-top: 8px;
+}
+
+/*-- Switch Button --*/
+
+#switch {
+  position: relative; /*limita o posicionamento a caixa switch */
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  height: 32px;
+  width: 32px;
+  border: none;
+  border-radius: 50%; /* Deixa a borda redonda */
+  background: white var(--switch-bg-url) no-repeat center;
+
+  position: absolute; /* Cria uma pilha para ter sobreposição */
+  z-index: 1; /*set o botão em cima do tracker */
+
+  /*-- Centraliza o botão na vertical --*/
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+/*-- Set do botão no light mode --*/
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/*-- cria o tracker --*/
+#switch span {
+  display: block; /*transforma o span em bloco em vez de linha */
+  height: 24px;
+  width: 64px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px; /* Deixa o tracker com borda circular */
+  backdrop-filter: blur(4px); /* Adiciona flou no fundo dos botões */
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* Adapta essa função para todos os navegadores */
+}
+
+/*-- Caixa lista de Links --*/
+ul {
+  list-style: none; /* Tira os pontos da lista */
+
+  display: flex; /* Display para melhor dispocição de varios items dentro da caixa*/
+  flex-direction: column; /* Deixa os elementos dentro da caixa organizados em colunas */
+  gap: 16px; /* Coloca um espaço entre cada elemento */
+
+  padding: 24px 0;
+}
+
+/* -- Estilizando os links dentro da lista --*/
+ul li a {
+  /*display flex vai permitir que o link pegue todo o espaço da caixa, transformando-a em um "botão"*/
+  display: flex;
+  justify-content: center; /*Eixo X*/
+  align-items: center; /*Eixo Y*/
+
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none; /* Tira o underline */
+  font-weight: 500;
+
+  transition: background 0.5s; /*Faz uma transição quando a um hover */
+}
+
+/*-- Estilizando caso hover --*/
+ul li a:hover {
+  border: solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+/*-- social links --*/
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+  gap: 32px;
+
+  font-size: 24px;
+}
+
+/*-- Estilizando os links --*/
+#social-links a {
+  /*- Set de todo o background invisivel -*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+/*- Deixa o background visivel quando hover -*/
+#social-links a:hover {
+  background: var(--surface-color-hover);
+}
+
+/*-- Estilizando o rodapé --*/
+footer {
+  padding: 24px 0;
+  text-align: center;
+
+  font-size: 14px;
+}

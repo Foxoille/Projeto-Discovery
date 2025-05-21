@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- definindo um documento HTML 5-->
+<html lang="pt-br">
+  <!-- Root element, ou elemento rais. Defindo a class Light para passar em light mode -->
+
+  <head>
+    <!-- Instalando fontes uteis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tag responsavel de configurar coisas que não são visiveis na pagina -->
+    <meta charset="UTF-8" />
+    <!-- configura os conjuntos de caracteres que vamos usar nessa pagina (caracteres especiais...)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Compatibilidade com navegadores mais antigos. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- adapta a viewport para escalas de tela diferentes (ex : um celular)-->
+
+    <title>DevLinks</title>
+
+    <!-- Selecionando nosso documento CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Craindo a caixa principal -->
+    <div id="container">
+      <!-- Caixa perfil que contem a imagem e o nome -->
+      <div id="profile">
+        <!-- Set e descrição da imagem -->
+        <img
+          src="./assets/avatar.png"
+          alt="Imagem do mike sorrindo num fundo laranja, com oculos e camiseta preta."
+        />
+
+        <!-- Texto -->
+        <p>@mike-mikezinho</p>
+      </div>
+
+      <!-- Cria a caixa switch par ao light mode onde temos um botão e um tracker -->
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <!-- Criar o tracker -->
+        <span></span>
+      </div>
+
+      <!-- Cria a caixa para a lista de links -->
+      <ul>
+        <!-- Um elemento da lista que contem um link -->
+        <li>
+          <a href="#">Consulte meus cursos</a>
+        </li>
+
+        <li>
+          <a href="#">Baixar meu e-book</a>
+        </li>
+
+        <li>
+          <a href="#">Ver meu portifolio</a>
+        </li>
+
+        <li>
+          <a href="https://rocketseat.com.br" target="_blank">
+            Conheça o Explorer</a
+          >
+        </li>
+      </ul>
+
+      <!-- Caixa com icones das redes sociais que servem de links -->
+      <div id="social-links">
+        <!-- Craiação de um link com conteudo sendo o icone -->
+        <a href="https://www.youtube.com" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="https://www.linkedin.com" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+
+        <a href="https://www.facebook.com" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </div>
+
+      <!-- Cria uma caixa de rodapé -->
+      <footer>
+        Feito com ♥ pela
+        <a href="https://app.rocketseat.com.br/" target="_blank">Rocketseat</a>
+      </footer>
+    </div>
+
+    <!-- Permite o uso dos icones na pagina -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
