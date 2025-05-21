@@ -91,12 +91,13 @@ body * {
 
   /*-- Colocando a Esquerda --*/
   left: 0;
-  animation: slide-back 0.2s;
+  animation: slide-back 0.2s; /*-- Aplicando animação --*/
 }
 
 /*-- Set do botão no light mode --*/
 .light #switch button {
-  animation: slide-in 0.2s forwards;
+  animation: slide-in 0.2s forwards; /*-- Aplicando animação --*/
+  /*-- forwards permite que o botão não volte ao estado antes da animação. --*/
 }
 
 /*-- cria o tracker --*/
@@ -197,6 +198,7 @@ footer {
   }
 }
 
+/*-- Craindo animações --*/
 @keyframes slide-in {
   from {
     left: 0;
